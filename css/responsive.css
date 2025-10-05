@@ -1,0 +1,97 @@
+@media (max-width: 992px) {
+  .hero-stats {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .site-header {
+    padding: 16px 20px;
+  }
+
+  .site-nav {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .nav-list {
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 24px;
+    background: rgba(26, 28, 27, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 16px;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 220px;
+    transform-origin: top right;
+    transform: scale(0.9);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform var(--transition-med), opacity var(--transition-med);
+  }
+
+  .nav-list.is-open {
+    transform: scale(1);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .hero,
+  .about-hero,
+  .contact-hero {
+    padding-top: 96px;
+  }
+
+  .mission {
+    padding: 36px;
+  }
+
+  .column-reverse {
+    grid-auto-flow: dense;
+  }
+}
+
+@media (max-width: 576px) {
+  body {
+    font-size: 0.95rem;
+  }
+
+  .hero-visual img {
+    max-width: 340px;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .pillar-card {
+    padding: 24px;
+  }
+
+  .featured-blog .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .mission {
+    padding: 28px;
+  }
+
+  .contact-form {
+    padding: 24px;
+  }
+
+  .modal-content {
+    padding: 22px;
+  }
+}

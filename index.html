@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shwetank Ojha | SEO Professional & AI Enthusiast</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  integrity="sha512-M9Q1ZRaX4uSyVfnSSWL1kHc6Pyn103LU7Z7jEl+fAFmU7SeU3oRf4yTqgkrLx4aoQbmp6SA5w/V8IrLwvfR3sA=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script defer src="js/main.js"></script>
+  <script defer src="js/navigation.js"></script>
+</head>
+<body>
+  <header class="site-header" data-observe>
+    <div class="logo">
+      <a href="index.html" aria-label="Shwetank Ojha Home">
+        <span class="logo-mark">SO</span>
+        <span class="logo-text">Shwetank Ojha</span>
+      </a>
+    </div>
+    <nav class="site-nav" aria-label="Main navigation">
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <ul class="nav-list" id="primaryNav">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="blog.html" class="nav-link">Blog</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="hero" aria-labelledby="heroTitle">
+      <div class="hero-content">
+        <p class="eyebrow" data-observe>Digital Marketing Strategist</p>
+        <h1 id="heroTitle" data-observe>
+          Elevating brands with <span class="highlight">SEO mastery</span> and <span class="highlight">AI innovation</span>.
+        </h1>
+        <p class="hero-subtitle" data-observe>
+          I’m Shwetank Ojha, a Bangalore-based marketer obsessed with unlocking growth through technical SEO, conversion-focused content, and cutting-edge AI workflows.
+        </p>
+        <div class="hero-cta" data-observe>
+          <a href="about.html" class="btn btn-primary">View Portfolio</a>
+          <a href="contact.html" class="btn btn-outline">Let’s Collaborate</a>
+        </div>
+        <ul class="hero-stats" data-observe aria-label="Key achievements">
+          <li><strong>3+</strong> Years driving SEO success</li>
+          <li><strong>200%</strong> Avg. traffic uplift per campaign</li>
+          <li><strong>15K+</strong> YouTube community insights shared</li>
+        </ul>
+      </div>
+      <div class="hero-visual" data-observe>
+        <img src="images/hero-bg.jpg" alt="Abstract digital marketing visualization" loading="lazy">
+      </div>
+    </section>
+
+    <section class="pillars section" aria-labelledby="pillarsTitle">
+      <div class="section-header">
+        <p class="eyebrow" data-observe>Core Focus</p>
+        <h2 id="pillarsTitle" data-observe>What I bring to your growth strategy</h2>
+      </div>
+      <div class="pillar-grid">
+        <article class="pillar-card" data-observe>
+          <div class="pillar-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+          <h3>Technical SEO Leadership</h3>
+          <p>Comprehensive audits, Core Web Vitals optimization, and site architectures that scale with your ambition.</p>
+          <a href="about.html#experience" class="text-link">See experience</a>
+        </article>
+        <article class="pillar-card" data-observe>
+          <div class="pillar-icon"><i class="fa-solid fa-robot"></i></div>
+          <h3>AI-Driven Strategy</h3>
+          <p>Workflow automation, generative content frameworks, and intelligent analytics to outpace competition.</p>
+          <a href="blog.html" class="text-link">Explore AI insights</a>
+        </article>
+        <article class="pillar-card" data-observe>
+          <div class="pillar-icon"><i class="fa-solid fa-chart-line"></i></div>
+          <h3>Conversion-Centric Content</h3>
+          <p>Data-backed storytelling that aligns keyword intent with compelling narratives and measurable ROI.</p>
+          <a href="blog.html#content-marketing" class="text-link">Read the playbook</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="featured-blog section" aria-labelledby="featuredTitle">
+      <div class="section-header">
+        <div> <!-- This new div wraps the heading elements -->
+          <p class="eyebrow" data-observe>Fresh from the blog</p>
+          <h2 id="featuredTitle" data-observe>Latest strategies & playbooks</h2>
+        </div>
+        <a href="blog.html" class="btn btn-outline">View all articles</a>
+      </div>
+      <div class="featured-grid" id="featuredPosts" data-observe aria-live="polite">
+        <!-- Filled by JS -->
+      </div>
+    </section>
+
+    <section class="mission section" aria-labelledby="missionTitle">
+      <div class="mission-content" data-observe>
+        <p class="eyebrow">Mission</p>
+        <h2 id="missionTitle">Blending technical precision with AI creativity.</h2>
+        <p>
+          I help growing businesses decode search intent, architect engaging user journeys, and harness AI responsibly to scale content operations. Every strategy is rooted in data, transparency, and sustainable long-term wins.
+        </p>
+      </div>
+      <div class="mission-cta" data-observe>
+        <h3>Let’s accelerate your next quarter</h3>
+        <p>Ready for smarter SEO and marketing that keeps pace with AI? Let’s craft a roadmap that’s as bold as your goals.</p>
+        <a href="contact.html" class="btn btn-primary">Book a discovery call</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div>
+        <span class="logo-mark">SO</span>
+        <p>Building measurable marketing systems through SEO, content, and AI experimentation.</p>
+      </div>
+      <nav aria-label="Footer navigation">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h4>Let’s connect</h4>
+        <ul class="footer-social">
+          <li><a href="mailto:hello@shwetankojha.com"><i class="fa-solid fa-envelope"></i> Email</a></li>
+          <li><a href="https://www.linkedin.com" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></li>
+          <li><a href="https://www.youtube.com" target="_blank" rel="noopener"><i class="fa-brands fa-youtube"></i> YouTube</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer-note">© <span id="year"></span> Shwetank Ojha. All rights reserved.</p>
+  </footer>
+</body>
+</html>

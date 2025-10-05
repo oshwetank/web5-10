@@ -1,0 +1,85 @@
+[
+  {
+    "id": 1,
+    "title": "AI-Powered Meta Description Optimization",
+    "excerpt": "Transform underperforming SERP snippets into click magnets with AI-assisted workflows.",
+    "content": "<p>When AI meets copy optimization, magic happens. In this playbook, I unpack how to train your favorite AI tools with brand-specific guidelines, feed them the right context from Search Console, and iterate until you have meta descriptions that both sparkle and nudge users to click. Expect examples, prompt frameworks, and a QA checklist.</p><p>The step-by-step approach covers identifying low CTR pages, extracting context, crafting AI prompts, human refinement tips, and how to A/B test on-page performance.</p>",
+    "tags": ["AI Tools", "Technical SEO"],
+    "date": "2025-10-01",
+    "thumbnail": "images/blog-thumbnails/blog1.jpg",
+    "readTime": "5 min read",
+    "featured": true
+  },
+  {
+    "id": 2,
+    "title": "Technical SEO Audit Checklist for 2025",
+    "excerpt": "A field-tested audit framework built for modern web stacks and algorithm updates.",
+    "content": "<p>This checklist breaks down into crawlability, indexation, site performance, structured data, and UX signals. Each section includes tooling suggestions, quick wins, and advanced diagnostics.</p><p>You’ll also find a Notion template link, GA4 checkpoints, and a prioritization model for communicating fixes to stakeholders.</p>",
+    "tags": ["Technical SEO"],
+    "date": "2025-09-20",
+    "thumbnail": "images/blog-thumbnails/blog2.jpg",
+    "readTime": "7 min read",
+    "featured": true
+  },
+  {
+    "id": 3,
+    "title": "Using ChatGPT for Content Marketing Strategy",
+    "excerpt": "Go beyond ideation—build frameworks, briefs, and editorial calendars with AI.",
+    "content": "<p>See how I’m pairing GPT with data from Ahrefs and GA4 to create content pillars, persona-driven angles, and distribution plans. Includes sample prompts, workflows, and the human oversight steps that keep quality high.</p><p>The article also covers compliance considerations and how to involve stakeholders in review loops.</p>",
+    "tags": ["AI Tools", "Content Marketing"],
+    "date": "2025-08-30",
+    "thumbnail": "images/blog-thumbnails/blog3.jpg",
+    "readTime": "6 min read",
+    "featured": true
+  },
+  {
+    "id": 4,
+    "title": "Local SEO for Service-Based Businesses",
+    "excerpt": "Capture nearby intent with localized landing pages, review flows, and smart schema.",
+    "content": "<p>Local competition is fierce, but with the right data and automation, you can stand out. This guide explores GMB optimization, geo-focused keyword research, AI-generated FAQs, and review outreach sequences.</p><p>Bonus: templates for creating unique local landing pages without bloating your site.</p>",
+    "tags": ["Technical SEO", "Keyword Research"],
+    "date": "2025-08-15",
+    "thumbnail": "images/blog-thumbnails/blog4.jpg",
+    "readTime": "8 min read"
+  },
+  {
+    "id": 5,
+    "title": "Keyword Research with AI Tools",
+    "excerpt": "Blend traditional keyword research with machine learning to prioritize opportunities.",
+    "content": "<p>I walk through an AI-enhanced keyword workflow that merges search volume data, SERP analysis, and content gap discovery. Tools covered include Ahrefs, Semrush, and programmatic prompt stacks.</p><p>Expect templates for clustering, competitor comparison techniques, and how to score opportunities objectively.</p>",
+    "tags": ["AI Tools", "Keyword Research"],
+    "date": "2025-07-22",
+    "thumbnail": "images/blog-thumbnails/blog5.jpg",
+    "readTime": "6 min read"
+  },
+  {
+    "id": 6,
+    "title": "Google Analytics 4 Setup Guide",
+    "excerpt": "Configure GA4 to track SEO performance and user behavior without losing your sanity.",
+    "content": "<p>This setup guide covers property configuration, key events, conversion tracking, and custom reports built for SEO monitoring. I also share Looker Studio dashboards that boardrooms understand.</p><p>Includes a post-setup QA routine and tips for educating stakeholders on the new metrics.</p>",
+    "tags": ["Technical SEO"],
+    "date": "2025-07-01",
+    "thumbnail": "images/blog-thumbnails/blog6.jpg",
+    "readTime": "9 min read"
+  },
+  {
+    "id": 7,
+    "title": "WordPress Speed Optimization Techniques",
+    "excerpt": "Level-up your Core Web Vitals with smart caching, asset handling, and AI alerts.",
+    "content": "<p>Learn how to tame plugins, optimize themes, implement lazy loading, and automate speed audits. I also share AI alerts that ping you when performance dips, so you can fix issues before rankings drop.</p>",
+    "tags": ["Technical SEO"],
+    "date": "2025-06-12",
+    "thumbnail": "images/blog-thumbnails/blog7.jpg",
+    "readTime": "7 min read"
+  },
+  {
+    "id": 8,
+    "title": "Content Gap Analysis Using AI",
+    "excerpt": "Uncover untapped topics and refresh opportunities with AI-assisted audits.",
+    "content": "<p>Combining competitor research with language models gives you a content roadmap that’s hard to beat. I explain how to feed top-performing URLs into AI, extract insights, and prioritize based on difficulty, potential, and brand fit.</p>",
+    "tags": ["Content Marketing", "AI Tools"],
+    "date": "2025-05-25",
+    "thumbnail": "images/blog-thumbnails/blog8.jpg",
+    "readTime": "5 min read"
+  }
+]

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blog | Shwetank Ojha</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  integrity="sha512-M9Q1ZRaX4uSyVfnSSWL1kHc6Pyn103LU7Z7jEl+fAFmU7SeU3oRf4yTqgkrLx4aoQbmp6SA5w/V8IrLwvfR3sA=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/blog.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script defer src="js/main.js"></script>
+  <script defer src="js/navigation.js"></script>
+  <script defer src="js/blog.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">
+      <a href="index.html" aria-label="Shwetank Ojha Home">
+        <span class="logo-mark">SO</span>
+        <span class="logo-text">Shwetank Ojha</span>
+      </a>
+    </div>
+    <nav class="site-nav" aria-label="Main navigation">
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <ul class="nav-list" id="primaryNav">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="blog.html" class="nav-link active">Blog</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="blog">
+    <section class="blog-hero" aria-labelledby="blogTitle">
+      <p class="eyebrow">Articles & Playbooks</p>
+      <h1 id="blogTitle">SEO, AI, and growth strategies worth bookmarking.</h1>
+      <p>Filter by topic or search directly. Every article is crafted to help marketers turn complexity into traction.</p>
+    </section>
+
+    <section class="blog-controls" aria-label="Blog filters">
+      <div class="search-bar">
+        <label for="blogSearch" class="sr-only">Search blog posts</label>
+        <input type="search" id="blogSearch" placeholder="Search articles (e.g. GA4, AI tools, local SEO)" autocomplete="off">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+      <div class="tag-filters" role="group" aria-label="Filter by tag">
+        <button class="tag-btn active" data-tag="all">All</button>
+        <button class="tag-btn" data-tag="Technical SEO">Technical SEO</button>
+        <button class="tag-btn" data-tag="Content Marketing">Content Marketing</button>
+        <button class="tag-btn" data-tag="AI Tools">AI Tools</button>
+        <button class="tag-btn" data-tag="Keyword Research">Keyword Research</button>
+      </div>
+    </section>
+
+    <section class="blog-grid" aria-live="polite" id="blogList">
+      <!-- Blog cards injected via JS -->
+    </section>
+
+    <div class="load-more-container">
+      <button class="btn btn-outline" id="loadMoreBtn">Load More</button>
+      <p class="empty-state" id="emptyState" hidden>No posts match your filters yet. Try a different keyword or category.</p>
+    </div>
+  </main>
+
+  <div class="modal" id="blogModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <article class="modal-content" role="document">
+      <button class="modal-close" id="modalClose" aria-label="Close article"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-meta">
+        <p class="modal-date" id="modalDate"></p>
+        <p class="modal-readtime" id="modalReadTime"></p>
+      </div>
+      <h2 id="modalTitle"></h2>
+      <div class="modal-tags" id="modalTags"></div>
+      <img id="modalThumbnail" alt="" loading="lazy">
+      <div class="modal-body" id="modalContent"></div>
+    </article>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div>
+        <span class="logo-mark">SO</span>
+        <p>Drops of practical marketing knowledge, brewed with AI curiosity.</p>
+      </div>
+      <nav aria-label="Footer navigation">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h4>Stay in touch</h4>
+        <ul class="footer-social">
+          <li><a href="mailto:hello@shwetankojha.com"><i class="fa-solid fa-envelope"></i> Email</a></li>
+          <li><a href="https://www.linkedin.com" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></li>
+          <li><a href="https://www.youtube.com" target="_blank" rel="noopener"><i class="fa-brands fa-youtube"></i> YouTube</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer-note">© <span id="year"></span> Shwetank Ojha. Keep learning.</p>
+  </footer>
+</body>
+</html>
