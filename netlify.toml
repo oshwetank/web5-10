@@ -1,3 +1,3 @@
 [build]
 command = "node scripts/generate-blog-json.js && npm run build"
-publish = "dist" # Use your correct output folder here
+publish = "."
