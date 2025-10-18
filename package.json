@@ -1,5 +1,10 @@
 {
+  "name": "web5-10",
+  "version": "1.0.0",
   "dependencies": {
     "gray-matter": "^4.0.3"
+  },
+  "scripts": {
+    "build": "echo 'No frontend build needed.'"
   }
 }
