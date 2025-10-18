@@ -81,5 +81,19 @@
     "date": "2025-05-25",
     "thumbnail": "images/blog-thumbnails/blog8.jpg",
     "readTime": "5 min read"
-  }
+  },
+  {
+  "id": 1695492800000,
+  "title": "Om Namah Shivay",
+  "date": "2025-10-06",
+  "excerpt": "This is a test file",
+  "thumbnail": "images/uploads/your-thumbnail.jpg",
+  "tags": ["Content Marketing", "AI Tools"],
+  "seotitle": "Om Namah Shivay",
+  "seodescription": "Om Namah Shivay",
+  "readTime": "5 min read",
+  "content": "<p>Om Namah Shivay.</p>"
+}
+
+
 ]
