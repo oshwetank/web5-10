@@ -143,8 +143,13 @@ if (blogList) {
   blogList.addEventListener("click", (event) => {
     const card = event.target.closest(".blog-card");
     if (!card) return;
-    openPost(Number(card.dataset.id));
+    const postId = Number(card.dataset.id);
+    const post = allPosts.find(p => p.id === postId);
+    if (post && post.url) {
+    window.location.href = post.url; // Navigate to individual page
+    }
   });
+
 
   blogList.addEventListener("keydown", (event) => {
     if (event.key === "Enter" || event.key === " ") {
@@ -163,4 +168,5 @@ if (blogList) {
       closeModal();
     }
   });
+
 }
