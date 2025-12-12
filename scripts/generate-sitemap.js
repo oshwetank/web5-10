@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const BASE_URL = 'https://oshwetank.github.io/web5-10';
+const BASE_URL = 'https://oshwetank.com';  // ← Change to your actual domain
 const PAGES_DIR = './';
 const OUTPUT_FILE = './sitemap.xml';
 
@@ -15,7 +15,7 @@ function getAllHtmlFiles(dir, fileList = []) {
 
     if (stat.isDirectory()) {
       // Skip directories that shouldn't be crawled
-      if (!['node_modules', '.git', 'css', 'images', 'js', '.github', '.vscode'].includes(file)) {
+      if (!['node_modules', '.git', 'css', 'images', 'js', '.github', '.vscode', 'node_modules'].includes(file)) {
         getAllHtmlFiles(filePath, fileList);
       }
     } else if (file.endsWith('.html')) {
@@ -26,7 +26,7 @@ function getAllHtmlFiles(dir, fileList = []) {
   return fileList;
 }
 
-// Generate sitemap
+// Generate sitemap with clean URLs (without .html extension for Netlify)
 function generateSitemap() {
   const htmlFiles = getAllHtmlFiles(PAGES_DIR);
 
@@ -37,16 +37,16 @@ function generateSitemap() {
     // Convert file path to URL
     let urlPath = file.replace(/\\/g, '/').replace(/^\.\/?/, '');
     
-    // For index.html, use just the directory
+    // Remove .html extension (Netlify handles this automatically)
     if (urlPath.endsWith('/index.html')) {
       urlPath = urlPath.replace('/index.html', '/');
     } else {
-      // Keep .html extension for non-index files
-      // Uncomment line below if your server does URL rewriting (removes .html)
-      // urlPath = urlPath.replace(/\.html$/, '');
+      urlPath = urlPath.replace(/\.html$/, '');
     }
     
-    const fullUrl = (BASE_URL + '/' + urlPath).replace(/\/+/g, '/').replace(/\/$/, '') || BASE_URL;
+    // Build full URL
+    let fullUrl = BASE_URL + '/' + urlPath;
+    fullUrl = fullUrl.replace(/\/+/g, '/').replace(/\/$/, '') || BASE_URL;
 
     sitemap += `  <url>\n`;
     sitemap += `    <loc>${fullUrl}</loc>\n`;
