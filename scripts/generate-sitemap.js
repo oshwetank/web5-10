@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const BASE_URL = 'https://oshwetank.com';  // ← Change to your actual domain
+const BASE_URL = 'https://oshwetank.com';  // Must start with https://
 const PAGES_DIR = './';
 const OUTPUT_FILE = './sitemap.xml';
 
@@ -14,8 +14,7 @@ function getAllHtmlFiles(dir, fileList = []) {
     const stat = fs.statSync(filePath);
 
     if (stat.isDirectory()) {
-      // Skip directories that shouldn't be crawled
-      if (!['node_modules', '.git', 'css', 'images', 'js', '.github', '.vscode', 'node_modules'].includes(file)) {
+      if (!['node_modules', '.git', 'css', 'images', 'js', '.github', '.vscode'].includes(file)) {
         getAllHtmlFiles(filePath, fileList);
       }
     } else if (file.endsWith('.html')) {
@@ -26,7 +25,7 @@ function getAllHtmlFiles(dir, fileList = []) {
   return fileList;
 }
 
-// Generate sitemap with clean URLs (without .html extension for Netlify)
+// Generate sitemap with clean URLs
 function generateSitemap() {
   const htmlFiles = getAllHtmlFiles(PAGES_DIR);
 
@@ -37,16 +36,23 @@ function generateSitemap() {
     // Convert file path to URL
     let urlPath = file.replace(/\\/g, '/').replace(/^\.\/?/, '');
     
-    // Remove .html extension (Netlify handles this automatically)
+    // Remove .html extension
     if (urlPath.endsWith('/index.html')) {
-      urlPath = urlPath.replace('/index.html', '/');
+      urlPath = urlPath.replace('/index.html', '');
     } else {
       urlPath = urlPath.replace(/\.html$/, '');
     }
     
-    // Build full URL
-    let fullUrl = BASE_URL + '/' + urlPath;
-    fullUrl = fullUrl.replace(/\/+/g, '/').replace(/\/$/, '') || BASE_URL;
+    // Build full URL correctly
+    let fullUrl;
+    if (urlPath === '') {
+      fullUrl = BASE_URL + '/';  // Homepage
+    } else {
+      fullUrl = BASE_URL + '/' + urlPath;
+    }
+    
+    // Clean up multiple slashes
+    fullUrl = fullUrl.replace(/([^:]\/)\/+/g, '$1');
 
     sitemap += `  <url>\n`;
     sitemap += `    <loc>${fullUrl}</loc>\n`;
@@ -63,3 +69,4 @@ function generateSitemap() {
 }
 
 generateSitemap();
+  
