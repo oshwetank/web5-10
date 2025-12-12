@@ -5,10 +5,10 @@ on:
     branches:
       - main
   schedule:
-    - cron: '30 20 * * *'
+    - cron: '30 20 * * *'  # Daily at 2:30 AM IST
 
 permissions:
-  contents: write  # ← ADD THIS: Allow GitHub Actions to write to repo
+  contents: write
 
 jobs:
   generate-sitemap:
