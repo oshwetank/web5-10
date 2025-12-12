@@ -1,0 +1,31 @@
+name: Generate Sitemap
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    # Run daily at 2 AM IST (8:30 PM UTC previous day)
+    - cron: '30 20 * * *'
+
+jobs:
+  generate-sitemap:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Generate Sitemap
+        run: node scripts/generate-sitemap.js
+
+      - name: Commit Sitemap
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add sitemap.xml
+          git commit -m "chore: auto-generate sitemap" || echo "No changes to commit"
+          git push
