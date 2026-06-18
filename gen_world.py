@@ -88,7 +88,7 @@ canvas{display:block}
   <div id="district-badge">Central Plaza</div>
   <div id="index-counter"><div class="num" id="icount">0</div><div>sites indexed</div></div>
   <div id="nearby-ind">Press <b>E</b> to index &nbsp;<span id="nearby-url"></span></div>
-  <div id="toast" id="toast"></div>
+  <div id="toast"></div>
   <div id="results-panel"><h3>&#128269; Search Index</h3><div id="rlist"></div></div>
   <div id="minimap"><canvas id="mm" width="140" height="140"></canvas></div>
   <div id="controls-hint">WASD / Arrow Keys &nbsp;&#8226;&nbsp; E = Index Site &nbsp;&#8226;&nbsp; R = Toggle Results</div>
@@ -138,7 +138,9 @@ scene.background=new THREE.Color(0x87CEEB);
 scene.fog=new THREE.FogExp2(0x87CEEB,0.009);
 
 var camera=new THREE.PerspectiveCamera(60,window.innerWidth/window.innerHeight,0.1,600);
-camera.position.set(0,10,18);
+// Place camera behind robot from frame 1 (robotAngle=PI → cos(PI)=-1 → z offset=-13)
+camera.position.set(0,7.5,12+Math.cos(Math.PI)*13);
+camera.lookAt(0,3,12);
 
 // =====================================================================
 //  LIGHTING
@@ -302,19 +304,37 @@ function makeLamp(px,pz){
   arm.rotation.z=Math.PI/2;arm.position.set(0.6,4.5,0);g.add(arm);
   var bulb=mkSph(0.18,makeMat(0xffffaa,0,0.1,0xffffaa,2.0),8);
   bulb.position.set(1.2,4.5,0);g.add(bulb);
-  var pl=new THREE.PointLight(0xffe8a0,0.6,12);
-  pl.position.set(1.2,4.4,0);g.add(pl);
+  // No per-lamp PointLight — 64 lights would kill performance.
+  // Strategic area lights are added separately below.
   g.position.set(px,0,pz);
   scene.add(g);
 }
-// Lamps along main road intersections
-var lampSpacing=18;
-for(var li=-8;li<=8;li++){
+// Place lamp posts every 36 units along main roads
+var lampSpacing=36;
+for(var li=-4;li<=4;li++){
   if(li===0)continue;
   makeLamp( 5,li*lampSpacing);
   makeLamp(-5,li*lampSpacing);
   makeLamp(li*lampSpacing, 5);
   makeLamp(li*lampSpacing,-5);
+}
+
+// Strategic area PointLights: 8 total, one per district + plaza
+var areaLightPositions=[
+  [0,0,0xffe8a0],      // Central Plaza
+  [-62,-62,0xc8ffc8],  // Library (green tint)
+  [ 62,-62,0xffeeaa],  // Market (warm)
+  [-62, 62,0xaaddff],  // Tech Hub (blue tint)
+  [ 62, 62,0xffaaaa],  // News (red tint)
+  [  0,-30,0xeeaaff],  // Social Park (purple tint)
+  [-90, 22,0x888888],  // Ruin zone 1 (dim)
+  [ 90,-22,0x888888],  // Ruin zone 2 (dim)
+];
+for(var ali=0;ali<areaLightPositions.length;ali++){
+  var alp=areaLightPositions[ali];
+  var apl=new THREE.PointLight(alp[2],0.5,80);
+  apl.position.set(alp[0],6,alp[1]);
+  scene.add(apl);
 }
 
 // =====================================================================
@@ -966,10 +986,10 @@ function animate(){
   // Walking animation
   if(Math.abs(robotVel)>0.005||turning){
     walkCycle+=delta*6*Math.abs(robotVel)/MOVE_SPD+delta*2*(turning?1:0);
-    // Tread wheels spin
+    // Tread wheels spin — iterate children directly (safe, no for..in)
     var tL=robot.userData.treadL, tR=robot.userData.treadR;
-    if(tL){for(var k in tL.userData){if(tL.userData[k]&&tL.userData[k].rotation)tL.userData[k].rotation.x+=robotVel*0.5;}}
-    if(tR){for(var k in tR.userData){if(tR.userData[k]&&tR.userData[k].rotation)tR.userData[k].rotation.x+=robotVel*0.5;}}
+    if(tL){for(var wi=0;wi<tL.children.length;wi++){tL.children[wi].rotation.x+=robotVel*0.5;}}
+    if(tR){for(var wi=0;wi<tR.children.length;wi++){tR.children[wi].rotation.x+=robotVel*0.5;}}
     // Leg bob
     var lL=robot.userData.lL, lR=robot.userData.lR;
     if(lL)lL.position.y=1.5+Math.sin(walkCycle)*0.08;
