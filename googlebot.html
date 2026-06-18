@@ -71,18 +71,10 @@
     <div class="status"><span style="color:rgba(255,255,255,0.12)">drag · scroll · explore</span></div>
 </div>
 
-<script type="importmap">
-{
-    "imports": {
-        "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
-        "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
-    }
-}
-</script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.134.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.134.0/examples/js/controls/OrbitControls.js"></script>
 
-<script type="module">
-import * as THREE from 'three';
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+<script>
 
 // ── Renderer ──────────────────────────────────────────────────────────────────
 const renderer = new THREE.WebGLRenderer({ antialias: true });
@@ -103,7 +95,7 @@ scene.fog = new THREE.FogExp2(0x080c1e, 0.022);
 const camera = new THREE.PerspectiveCamera(55, innerWidth / innerHeight, 0.1, 200);
 camera.position.set(0, 2.5, 11);
 
-const controls = new OrbitControls(camera, renderer.domElement);
+const controls = new THREE.OrbitControls(camera, renderer.domElement);
 controls.target.set(0, 1.2, 0);
 controls.enableDamping = true;
 controls.dampingFactor = 0.06;
